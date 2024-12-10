@@ -29,11 +29,11 @@ Parameters to adjust:
 -  explore_lens = an array containing the fixed explorations per arm. Set each index as an initial exploration length to compare the effectiveness of different lengths. The second index [1] will thompson sample with a t distribution, all other indices will sample using a normal distribution. Example: explore_lens = [2, 2, 15, 30] compares four algorithms. Three use normal thompson sampling with 2, 15, or 30 initial explorations per arm, one uses a t distribution for thompson sampling with 2 explorations per arm. Only used in MAB_Thompson_Sampling_Exploration.ipynb.
 
 Note and Methods
-
 - The distributions of the rewards for each arm are randomized for each simulation
 - When Thompson sampling at each round, each arm is assigned a random quantile, which is used in each algorithms respective posterior distribution.
 - The reward sequence for each arm is randomized for each trial, but is the same for all algorithms within each trial. That is the i'th time each algorithm chooses arm k, it will recieve reward x.
 - The above two design choices allow for direct algorithm comparison for single simulations.
+- The files use pre-computed Z and T tables in thompson sampling. Because of this, initial computation of the tables takes about 10 minutes when running the first cell. This is a one-time setup time cost, the tables are saved and loaded for future runs. The size of the T table is about 4 GB.
 
 Conclusions
 - Thompson sampling benefits from initial exploration
