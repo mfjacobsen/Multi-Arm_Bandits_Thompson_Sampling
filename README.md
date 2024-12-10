@@ -1,5 +1,5 @@
 # Multi-Arm_Bandits_Thompson_Sampling
-An exploration of solutions to multi-armed bandits using Thompson Sampling. 
+An exploration of Reinforcement Learning solutions to the multi-armed bandits problem. 
 
 This repository contains two files, 
 - MAB_Thompson_Sampling.ipynb
